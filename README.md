@@ -1,35 +1,33 @@
 # «Online cinema»
+# Backend part of the project.
 
-## Description:
+## Functional:
 
-- Frontend and backend parts of the project
+Functional:
+- User authentication (registration new user, authorization user, delete user)
 
 
-
-## Deployed:
-
-[Watch here](https://nda17.github.io/Online-cinema/)
-
-## Project setup:
-...
+## Used:
+- TypeScript
+- Nest js
+- MongoDb
 
 ## Compiles and minifies for production:
-...
 
-
-
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
-
-## Getting Started
-
-First, run the development server:
-
-```bash
-npm run dev
+yarn build
 # or
+npm run build
+# or
+pnpm build
+# or
+bun build
+
+## Getting started online development server:
+
 yarn dev
+# or
+npm run dev
 # or
 pnpm dev
 # or
 bun dev
-```

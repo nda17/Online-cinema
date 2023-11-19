@@ -1,5 +1,5 @@
 import { createParamDecorator, ExecutionContext } from '@nestjs/common'
-import { UserModel } from '../user.model'
+import { UserModel } from 'src/user/user.model'
 
 type TypeData = keyof UserModel
 
@@ -8,6 +8,6 @@ export const User = createParamDecorator(
 		const request = ctx.switchToHttp().getRequest()
 		const user = request.user
 
-		return data ? user[data] : user
+		return data ? user?.[data] : user
 	}
 )

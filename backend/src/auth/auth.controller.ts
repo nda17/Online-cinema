@@ -1,37 +1,38 @@
 import {
-	Controller,
-	Post,
 	Body,
+	Controller,
+	HttpCode,
+	Post,
 	UsePipes,
-	ValidationPipe,
-	HttpCode
+	ValidationPipe
 } from '@nestjs/common'
+//eslint-disable-next-line
 import { AuthService } from './auth.service'
 import { AuthDto } from './dto/auth.dto'
 import { RefreshTokenDto } from './dto/refreshToken.dto'
 
 @Controller('auth')
 export class AuthController {
-	constructor(private readonly authService: AuthService) {}
+	constructor(private readonly AuthService: AuthService) {}
 
 	@UsePipes(new ValidationPipe())
 	@HttpCode(200)
 	@Post('login')
 	async login(@Body() dto: AuthDto) {
-		return this.authService.login(dto)
+		return this.AuthService.login(dto)
 	}
 
 	@UsePipes(new ValidationPipe())
 	@HttpCode(200)
 	@Post('login/access-token')
 	async getNewTokens(@Body() dto: RefreshTokenDto) {
-		return this.authService.getNewTokens(dto)
+		return this.AuthService.getNewTokens(dto)
 	}
 
 	@UsePipes(new ValidationPipe())
 	@HttpCode(200)
 	@Post('register')
 	async register(@Body() dto: AuthDto) {
-		return this.authService.register(dto)
+		return this.AuthService.register(dto)
 	}
 }
