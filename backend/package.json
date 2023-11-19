@@ -78,5 +78,10 @@
     ],
     "coverageDirectory": "../coverage",
     "testEnvironment": "node"
-  }
+  },
+  "editor.codeActionsOnSave": [
+    "source.addMissingImports"
+]
+
+  
 }
