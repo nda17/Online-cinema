@@ -43,7 +43,7 @@ export class MovieService {
 		return doc
 	}
 
-	async byActor(actorId: string) {
+	async byActor(actorId: Types.ObjectId) {
 		const docs = await this.MovieModel.find({ actors: actorId }).exec()
 		if (!docs) {
 			throw new NotFoundException('Movies not found.')
@@ -71,7 +71,10 @@ export class MovieService {
 	async updateCountOpened(slug: string) {
 		const updateDoc = await this.MovieModel.findOneAndUpdate(
 			{ slug },
-			{ $inc: { countOpened: 1 } }
+			{ $inc: { countOpened: 1 } },
+			{
+				new: true
+			}
 		).exec()
 
 		if (!updateDoc) {
@@ -94,7 +97,6 @@ export class MovieService {
 			bigPoster: '',
 			actors: [],
 			genres: [],
-			description: '',
 			poster: '',
 			title: '',
 			videoUrl: '',

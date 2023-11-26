@@ -13,7 +13,7 @@ export class Parameters {
 	duration: number
 
 	@prop()
-	country: number
+	country: string
 }
 
 // eslint-disable-next-line
@@ -26,9 +26,6 @@ export class MovieModel extends TimeStamps {
 
 	@prop()
 	title: string
-
-	@prop()
-	description: string
 
 	@prop({ unique: true })
 	slug: string

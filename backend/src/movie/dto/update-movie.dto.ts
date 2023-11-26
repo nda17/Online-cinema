@@ -8,7 +8,7 @@ export class Parameters {
 	duration: number
 
 	@IsString()
-	country: number
+	country: string
 }
 
 export class UpdateMovieDto {
@@ -20,9 +20,6 @@ export class UpdateMovieDto {
 
 	@IsString()
 	title: string
-
-	@IsString()
-	description: string
 
 	@IsString()
 	slug: string
