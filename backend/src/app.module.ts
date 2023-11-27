@@ -9,6 +9,7 @@ import { getMongoDbConfig } from './config/mongo.config'
 import { FileModule } from './file/file.module'
 import { GenreModule } from './genre/genre.module'
 import { MovieModule } from './movie/movie.module'
+import { RatingModule } from './rating/rating.module'
 import { UserModule } from './user/user.module'
 
 @Module({
@@ -24,7 +25,8 @@ import { UserModule } from './user/user.module'
 		GenreModule,
 		FileModule,
 		ActorModule,
-		MovieModule
+		MovieModule,
+		RatingModule
 	],
 	controllers: [AppController],
 	providers: [AppService]
